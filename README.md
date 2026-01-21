@@ -68,7 +68,7 @@ curl.exe -v http://localhost:8080/api/v1/movies/heavy
 
 #### Abordagem GraphQL
 ```powershell
-curl.exe -X POST -H "Content-Type: application/json" -d '{ "query": "{ movies { title } }" }' http://localhost:8080/graphql
+curl.exe -X POST -H "Content-Type: application/json" -d "@query-overfetching.json" http://localhost:8080/graphql
 ```
 **Resultado**: Um JSON limpo contendo APENAS o título. O cliente decide o que recebe.
 
