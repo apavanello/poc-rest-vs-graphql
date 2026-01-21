@@ -42,7 +42,7 @@ powershell -ExecutionPolicy Bypass -File demo-n1-rest.ps1
 Execute a query que pede tudo de uma vez:
 
 ```powershell
-curl -X POST -H "Content-Type: application/json" -d "@query-n1.json" http://localhost:8080/graphql
+curl.exe -X POST -H "Content-Type: application/json" -d "@query-n1.json" http://localhost:8080/graphql
 ```
 
 **O que observar:**
@@ -56,19 +56,19 @@ Situação: O frontend precisa apenas do `Título` do filme.
 
 #### Abordagem REST
 ```powershell
-curl -v http://localhost:8080/api/v1/movies
+curl.exe -v http://localhost:8080/api/v1/movies
 ```
 **Resultado**: Você recebe ID, Título, Gênero, Ano... tudo. O servidor decide o que manda.
 
 #### Abordagem REST Extreme (Endpoint "Pesado")
 ```powershell
-curl -v http://localhost:8080/api/v1/movies/heavy
+curl.exe -v http://localhost:8080/api/v1/movies/heavy
 ```
 **Resultado**: Payload gigante com metadados inúteis e listas completas.
 
 #### Abordagem GraphQL
 ```powershell
-curl -X POST -H "Content-Type: application/json" -d "{ \"query\": \"{ movies { title } }\" }" http://localhost:8080/graphql
+curl.exe -X POST -H "Content-Type: application/json" -d '{ "query": "{ movies { title } }" }' http://localhost:8080/graphql
 ```
 **Resultado**: Um JSON limpo contendo APENAS o título. O cliente decide o que recebe.
 
