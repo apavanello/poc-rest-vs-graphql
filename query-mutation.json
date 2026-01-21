@@ -1,0 +1,3 @@
+{
+    "query": "mutation { createMovie(input: { title: \"New GraphQL Movie\", genre: \"Sci-Fi\", releaseYear: 2025 }) { id title } }"
+}
